@@ -16,6 +16,14 @@ app.use(express.urlencoded({ extended: true}))
 
 app.use('/user', userRoute)
 // app.use('/staff', require('./src/routes/staff.route'))
+
+app.get('/', (req, res) => {
+    res.status(200).json({
+        status: true,
+        message: "Welcome to the server"
+    })
+})
+
 app.get('/health', (req, res) => {
     res.status(200).json({
         status: true,
